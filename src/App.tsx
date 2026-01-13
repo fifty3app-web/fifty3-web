@@ -57,18 +57,18 @@ export default function App() {
   // 1) Firestore
   // 2) localStorage
   // 3) Demo από fakeGymApi
-  useEffect(() => {
-    async function loadInitial() {
-      // 1️⃣ Firestore
-      try {
-        const snap = await getDoc(doc(db, "state", "main"));
-        if (snap.exists()) {
-          const data = snap.data() as PersistedState;
-          setClients(data.clients ?? []);
-          setBookings(data.bookings ?? []);
-          setBlockedSlots(data.blockedSlots ?? []);
-          setClientsLoaded(true);
-          console.log("Loaded from Firestore");
+useEffect(() => {
+  console.log("🔥 useEffect started");   // <-- ΒΑΛ' ΤΟ ΕΔΩ
+
+  async function loadInitial() {
+    // 1️⃣ Firestore
+    try {
+      const snap = await getDoc(doc(db, "state", "main"));
+      if (snap.exists()) {
+        const data = snap.data() as PersistedState;
+        setClients(data.clients ?? []);
+        setBookings(data.bookings ?? []);
+        setBlockedSlots(data.blockedSlots ?? []);
           return;
         }
       } catch (err) {
