@@ -7,6 +7,7 @@ import logo from "./assets/fifty3-logo.png";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { db, auth } from "./firebase";
+console.log("🔥 App component started loading");
 
 type Role = "TRAINER" | "CLIENT";
 
