@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
-
+console.log("🔥 Firebase config:", import.meta.env);
 const firebaseConfig = {
   apiKey: "AIzaSyB--nzndt4u_of_el3s8EGCxxlVk_1u2ow",
   authDomain: "fifty3-gym.firebaseapp.com",
@@ -16,4 +16,5 @@ const app = initializeApp(firebaseConfig);
 
 export const db = getFirestore(app);
 export const auth = getAuth(app);
+
 
