@@ -1,0 +1,510 @@
+/* Ρίζα εφαρμογής: μαύρο φόντο, δύο στήλες */
+.app-root {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  background: #000;
+  color: #ff9800;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Αριστερή στήλη: Login / trainer dashboard */
+.app-left {
+  flex: 0 0 420px;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding: 24px;
+}
+
+.app-card {
+  background: #111;
+  border-radius: 16px;
+  padding: 24px 28px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+  width: 100%;
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+}
+
+input {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #000;
+  color: #ff9800;
+}
+
+button {
+  margin-top: 8px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: none;
+  background: #ff9800;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.error {
+  color: #ff5252;
+  font-size: 13px;
+}
+
+.hint {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #aaa;
+}
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.welcome-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.divider {
+  margin: 12px 0;
+  border: 0;
+  border-top: 1px solid #333;
+}
+
+/* Λίστα πελατών */
+.client-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.client-item {
+  padding: 8px 0;
+  border-bottom: 1px solid #333;
+}
+
+.client-name {
+  font-weight: 600;
+}
+
+.client-email {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* σειρά με Τηλ + κουμπιά */
+.client-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.client-phone {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+/* Κουμπιά ενεργειών πελάτη */
+.client-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.client-actions button {
+  margin-top: 0;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+}
+
+.client-delete-button {
+  background: #ff1744;
+  color: #fff;
+}
+
+.client-item-selected {
+  background: #222;
+  border-radius: 8px;
+  padding: 6px 8px;
+}
+
+.client-form {
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Δεξιά στήλη: Ημερολόγιο */
+.app-right {
+  flex: 1;
+  padding: 24px;
+  border-left: 1px solid #333;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background: #000;
+}
+
+/* Ημερολόγιο μήνα + ώρες */
+
+.calendar {
+  max-width: 100%;
+  width: 100%;
+  color: #ff9800;
+}
+
+.calendar-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.calendar-header-row h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.calendar-nav-button {
+  background: transparent;
+  border-radius: 999px;
+  border: 1px solid #555;
+  padding: 4px 10px;
+  color: #ff9800;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.calendar-nav-button:hover {
+  background: #222;
+}
+
+.calendar-scroll {
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.calendar-grid {
+  display: grid;
+  gap: 4px;
+  min-width: 700px; /* για να χωράνε οι ώρες, scroll αν χρειαστεί */
+}
+
+.calendar-top-left-cell,
+.calendar-header-cell,
+.calendar-day-label,
+.calendar-cell {
+  border: 1px solid #333;
+  padding: 4px 6px;
+  font-size: 12px;
+}
+
+/* κεφαλίδες ωρών */
+.calendar-header-cell {
+  text-align: center;
+  font-weight: 600;
+  background: #111;
+}
+
+/* αριστερή στήλη με μέρα/ημέρα */
+.calendar-day-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+  text-align: center;
+}
+
+.calendar-day-number {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.calendar-day-weekday {
+  font-size: 11px;
+  opacity: 0.8;
+  text-transform: capitalize;
+}
+
+/* κελιά ωρών */
+.calendar-cell {
+  border: 1px solid #333;
+  min-height: 40px;
+  cursor: pointer;
+
+  /* ΚΕΝΤΡΑΡΙΣΜΑ ΠΕΡΙΕΧΟΜΕΝΟΥ */
+  display: flex;
+  align-items: center;   /* κάθετα στη μέση */
+  justify-content: center; /* οριζόντια στη μέση */
+
+  /* ΜΕΓΑΛΟ & ΕΝΤΟΝΟ ΝΟΥΜΕΡΟ */
+  font-size: 22px;
+  font-weight: 700;
+
+  position: relative;
+  transition: background-color 0.15s ease, transform 0.05s ease;
+}
+
+.calendar-cell:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 4px rgba(255, 152, 0, 0.4);
+}
+
+/* επιλεγμένο κελί */
+.calendar-cell.slot-selected {
+  outline: 2px solid #ffffff;
+  outline-offset: -2px;
+}
+
+/* πληρότητα slot */
+.calendar-cell.slot-empty {
+  background: #000000;        /* 0 άτομα */
+  color: #ff9800;
+}
+
+.calendar-cell.slot-low {
+  background: #ffff00;        /* 1 άτομο - κίτρινο */
+  color: #000000;
+}
+
+.calendar-cell.slot-medium {
+  background: #ff9800;        /* 2 άτομα - πορτοκαλί */
+  color: #000000;
+}
+
+.calendar-cell.slot-full {
+  background: #ff1744;        /* 3 άτομα - κόκκινο */
+  color: #ffffff;
+}
+
+.calendar-hint {
+  margin-top: 12px;
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* Popup δίπλα στο κελί */
+.slot-editor-popup {
+  position: fixed;
+  z-index: 1000;
+}
+
+/* βασικό κουτί popup */
+.slot-editor {
+  margin-top: 0;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #111;
+  font-size: 13px;
+  min-width: 260px;
+  max-width: 340px;
+}
+
+/* header popup */
+.slot-editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.slot-editor-header h3 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.slot-editor-close {
+  margin-top: 0;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #444;
+  color: #fff;
+  font-size: 12px;
+}
+
+/* γραμμή με Edit / Save */
+.slot-editor-actions-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+.slot-editor-edit-button,
+.slot-editor-save-button {
+  margin-top: 0;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.slot-editor-edit-button {
+  background: #444;
+  color: #fff;
+}
+
+.slot-editor-save-button {
+  background: #ff9800;
+  color: #000;
+}
+
+/* γραμμή επιλεγμένων ονομάτων */
+.slot-editor-selected-line {
+  margin-top: 4px;
+  margin-bottom: 6px;
+  font-size: 12px;
+}
+
+.slot-editor-selected-label {
+  opacity: 0.7;
+}
+
+.slot-editor-selected-names {
+  font-weight: 500;
+}
+
+/* πεδίο αναζήτησης */
+.slot-editor-search {
+  margin-top: 4px;
+  margin-bottom: 6px;
+}
+
+.slot-editor-search input {
+  width: 100%;
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid #555;
+  background: #000;
+  color: #ff9800;
+  font-size: 12px;
+}
+
+/* λίστα πελατών μέσα στο popup */
+.slot-editor-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 220px;
+  overflow-y: auto;
+  margin-top: 4px;
+}
+
+.slot-editor-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 6px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.slot-editor-item:hover {
+  background: #222;
+}
+
+.slot-editor-item-selected {
+  background: #333;
+}
+
+.slot-editor-indicator {
+  font-size: 12px;
+  width: 14px;
+  text-align: center;
+}
+
+.slot-editor-name {
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.slot-editor-email,
+.slot-editor-phone {
+  font-size: 11px;
+  opacity: 0.8;
+}
+.app-logo {
+  display: block;
+  max-width: 260px;
+  width: 100%;
+  margin: 0 auto 20px;
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.7));
+}
+/* κελί κλειδωμένης ώρας */
+.slot-blocked {
+  background: repeating-linear-gradient(
+    45deg,
+    #333,
+    #333 4px,
+    #222 4px,
+    #222 8px
+  );
+  color: #999;
+  border-color: #666;
+}
+
+.slot-blocked:hover {
+  outline: 2px solid #ff9800;
+}
+
+/* κουμπιά lock/unlock στο popup */
+.slot-editor-lock-button {
+  background: #b71c1c;
+  color: #fff;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.slot-editor-unlock-button {
+  background: #2e7d32;
+  color: #fff;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.slot-editor-blocked-msg {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #ffb74d;
+}
